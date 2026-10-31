@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cobalt: #2E7DD1;
+  --color-cobalt-deep: #1A5FA8;
+  --color-navy: #1A3A5C;
+  --color-pink: #F8ABBE;
+  --color-lavender: #7A8FD0;
+  --color-pink-soft: #FDE8EC;
+  --color-blue-soft: #E6EEF9;
+  --color-ink: #5B6470;
+  --color-sky: #8BAED4;
+
+  --font-display: "Grandstander", sans-serif;
+  --font-body: "Maven Pro", sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+}
+html {
+  scroll-behavior: smooth;
+}
+
+section[id],
+footer[id] {
+  scroll-margin-top: 83px; /* so the sticky navbar doesn't cover the top of a section */
+}
