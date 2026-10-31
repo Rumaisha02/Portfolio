@@ -5,7 +5,7 @@ import catImg from "../../assets/catImg.png";
 import Cat from "../about/Cat";
 
 
-const CAT_IMG = catImg;
+
 
 const skills = [
   { label: "Figma", variant: "blue" },
