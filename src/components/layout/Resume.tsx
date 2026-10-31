@@ -49,7 +49,7 @@ export default function Resume() {
 
       {/* ---- heading ---- */}
       <div className="relative z-10 mx-auto flex h-[208px] w-[893px] items-center justify-center rounded-t-[50%/100%] bg-blue-soft">
-        <h2 className="resume-heading font-display text-[140px] font-black leading-none text-cobalt">
+        <h2 className="resume-heading font-display text-[100px] font-black leading-none text-cobalt">
           Resume
         </h2>
       </div>

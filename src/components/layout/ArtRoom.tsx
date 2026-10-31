@@ -7,7 +7,7 @@ import { artworks } from "../../data/artworks";
    Today these feed inline styles + a CSS transition.
    Later with GSAP: gsap.to(card, { ...getPose(offset) }) — same function, no rewrite. */
 type Pose = { x: number; y: number; rotate: number; scale: number; opacity: number; z: number };
-const CARD_W = 440; // change this one number to resize everything
+const CARD_W = 420; // change this one number to resize everything
 function getPose(offset: number): Pose {
   if (offset === 0) return { x: 0, y: 0, rotate: 0, scale: 1, opacity: 1, z: 30 };
   if (offset === -1) return { x: -CARD_W * 0.7, y: 56, rotate: -15, scale: 1, opacity: 1, z: 10 };
@@ -44,7 +44,7 @@ export default function ArtRoom() {
       </Container>
 
       {/* ---- card stage ---- */}
-      <div className="art-stage relative z-10 mx-auto mt-14 h-[760px] max-w-[1440px]">
+      <div className="art-stage relative z-10 mx-auto mt-14 h-[560px] max-w-[1440px]">
         {artworks.map((art, i) => {
           const offset = offsetOf(i, active, n);
           const p = getPose(offset);
@@ -89,7 +89,7 @@ export default function ArtRoom() {
 
       {/* ---- prev/next: only appear once you have more than 3 pieces ---- */}
       {n > 3 && (
-        <div className="relative z-10 mt-4 flex justify-center gap-4">
+        <div className="relative z-10 mt-2 flex justify-center gap-4">
           <button
             onClick={() => setActive((active - 1 + n) % n)}
             aria-label="Previous artwork"

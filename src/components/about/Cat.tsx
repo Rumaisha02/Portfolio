@@ -14,11 +14,13 @@ export default function Cat() {
     c.height = i.naturalHeight;
     c.getContext("2d")?.drawImage(i, 0, 0);
     c.style.visibility = "visible";
+    i.style.visibility = "hidden";
   };
 
   // on leave: remove it, and the animation underneath is still running
   const unfreeze = () => {
     if (still.current) still.current.style.visibility = "hidden";
+    if (img.current) img.current.style.visibility = "visible";
   };
 
   return (

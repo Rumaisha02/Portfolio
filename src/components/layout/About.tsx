@@ -1,7 +1,7 @@
 import Container from "../ui/Container";
 import Pill from "../ui/Pill";
 import { Sparkle, StarOutline } from "../ui/Decor";
-import catImg from "../../assets/catImg.png";
+
 import Cat from "../about/Cat";
 
 
@@ -40,7 +40,7 @@ export default function About() {
       <Sparkle className="absolute left-[840px] top-[72px] size-7 text-pink/60" />
 
       {/* ---- cat sticker ---- */}
-      <div className="absolute right-[150px] top-[290px] z-20 hidden lg:block">
+      <div className="absolute right-[100px] top-[290px] z-20 hidden lg:block">
         <Cat />
       </div>
 

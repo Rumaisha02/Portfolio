@@ -17,7 +17,7 @@ export default function Work() {
       <Sparkle className="absolute left-[62px] top-[880px] size-7 text-white/50" />
 
       <Container className="relative z-10">
-        <h2 className="work-heading text-center font-display text-[140px] font-black leading-none text-white">
+        <h2 className="work-heading text-center font-display text-[100px] font-black leading-none text-white">
           Work
         </h2>
 
