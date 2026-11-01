@@ -1,7 +1,8 @@
 import Container from "../ui/Container";
 import Pill from "../ui/Pill";
 import { Sparkle, StarOutline } from "../ui/Decor";
-
+import { useRef } from "react";
+import { gsap, useGSAP } from "../../lib/gsap";
 import Cat from "../about/Cat";
 
 
@@ -28,8 +29,48 @@ const skills = [
 const Divider = () => <div className="h-1 w-full bg-blue-soft" />;
 
 export default function About() {
+  const root = useRef<HTMLElement>(null);
+
+  useGSAP(
+    () => {
+      const mm = gsap.matchMedia();
+      mm.add("(prefers-reduced-motion: no-preference)", () => {
+        // sections just fade in, right where they sit
+        const fade = (sel: string, start = "top 80%") =>
+          gsap.from(sel, {
+            opacity: 0,
+            duration: 1.2,
+            ease: "power1.out",
+            scrollTrigger: { trigger: sel, start, toggleActions: "play none none reset" },
+          });
+
+        fade(".about-intro");
+        fade(".about-book");
+        fade(".about-skills h2", "top 85%"); // the "Skills" title
+
+        // pills pop out one by one
+        gsap.from(".skill-pill", {
+          scale: 0,
+          opacity: 0,
+          transformOrigin: "50% 50%",
+          duration: 0.5,
+          ease: "back.out(2.2)",
+          stagger: 0.07,
+          scrollTrigger: {
+            trigger: ".about-skills",
+            start: "top 75%",
+            toggleActions: "play none none reset",
+          },
+        });
+      });
+      return () => mm.revert();
+    },
+    { scope: root }
+  );
+
+
   return (
-    <section id="about" className="relative overflow-hidden bg-white py-[100px] ">
+    <section ref={root} id="about" className="relative overflow-hidden bg-white py-[100px] ">
       {/* ---- background decor ---- */}
       <div className="absolute -right-[60px] -top-[100px] size-[360px] rounded-full bg-pink-soft" />
       <div className="absolute -bottom-[120px] -left-[80px] size-[300px] rounded-full bg-blue-soft/60" />
@@ -45,7 +86,7 @@ export default function About() {
       </div>
 
       {/* ---- block 1: intro ---- */}
-      <Container className="relative z-10">
+      <Container className="about-intro relative z-10">
         <Pill variant="pink" className="h-8 gap-2 text-xs font-medium text-navy">
           <Sparkle className="size-4 text-navy" />
           About Me
@@ -64,7 +105,7 @@ export default function About() {
       <div className="my-6"><Divider /></div>
 
       {/* ---- block 2: bookholic ---- */}
-      <Container className="relative z-10">
+      <Container className="about-book relative z-10">
         <div className="ml-auto max-w-[620px] text-right lg:mr-[300px]">
           <h2 className="font-display text-5xl font-bold text-navy">Part time bookholic</h2>
           <p className="mt-6 text-base leading-[26px] text-ink">
@@ -79,11 +120,11 @@ export default function About() {
       <div className="my-6"><Divider /></div>
 
       {/* ---- block 3: skills ---- */}
-      <Container className="relative z-10">
+      <Container className="about-skills relative z-10">
         <h2 className="font-display text-5xl font-bold text-navy">Skills</h2>
         <ul className="mt-6 flex max-w-[900px] flex-wrap gap-3">
           {skills.map((s) => (
-            <li key={s.label}>
+            <li key={s.label} className="skill-pill">
               <Pill variant={s.variant}>{s.label}</Pill>
             </li>
           ))}

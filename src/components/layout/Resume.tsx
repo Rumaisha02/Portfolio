@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import Container from "../ui/Container";
 import { Sparkle, StarOutline } from "../ui/Decor";
 import { resume } from "../../data/resume";
+import SectionHeading from "../ui/SectionHeading";
 
 const linkCls = "underline decoration-ink/40 underline-offset-2 transition-colors hover:text-cobalt";
 
@@ -49,9 +50,7 @@ export default function Resume() {
 
       {/* ---- heading ---- */}
       <div className="relative z-10 mx-auto flex h-[208px] w-[893px] items-center justify-center rounded-t-[50%/100%] bg-blue-soft">
-        <h2 className="resume-heading font-display text-[100px] font-black leading-none text-cobalt">
-          Resume
-        </h2>
+        <SectionHeading text="Resume" className="font-display text-[140px] font-black leading-none text-cobalt" />
       </div>
 
       <Container className="relative z-10 mt-[70px]">

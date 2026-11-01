@@ -8,15 +8,17 @@ export default function ProjectCard({ project }: { project: Project }) {
 
   return (
     <article>
-      <Pill variant={tagVariant} className="gap-2 text-xs font-medium text-navy">
-        <Sparkle className="size-4 text-navy" />
-        {tag}
-      </Pill>
+      <div data-reveal className="w-fit">
+        <Pill variant={tagVariant} className="gap-2 text-xs font-medium text-navy">
+          <Sparkle className="size-4 text-navy" />
+          {tag}
+        </Pill>
+        </div>
 
-      <h3 className="mt-5 text-[28px] font-bold text-white">{title}</h3>
-      <p className="mt-4 text-[22px] leading-7 text-white">{description}</p>
+      <h3 data-reveal className="mt-5 text-[28px] font-bold text-white">{title}</h3>
+      <p data-reveal className="mt-4 text-[22px] leading-7 text-white">{description}</p>
 
-      <div className="mt-10 grid grid-cols-[615px_1fr] gap-12 rounded-[32px] bg-white p-8">
+      <div data-reveal className="mt-10 grid grid-cols-[615px_1fr] gap-12 rounded-[32px] bg-white p-8">
         {/* cover */}
         <div className="h-[417px] overflow-hidden rounded-2xl bg-blue-soft">
           {cover ? (
