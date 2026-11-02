@@ -19,7 +19,7 @@ const icons: Record<string, React.ReactNode> = {
 
 export default function Footer() {
   return (
-    <footer id="contact" className="bg-cobalt-deep py-12 text-white">
+    <footer  className="bg-cobalt-deep py-12 text-white">
       <Container className="grid grid-cols-[460px_1fr_auto] items-start text-sm tracking-[0.15em]">
         {/* left */}
         <div>
