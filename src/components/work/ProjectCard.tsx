@@ -13,16 +13,20 @@ export default function ProjectCard({ project }: { project: Project }) {
           <Sparkle className="size-4 text-navy" />
           {tag}
         </Pill>
-        </div>
+      </div>
 
       <h3 data-reveal className="mt-5 text-[28px] font-bold text-white">{title}</h3>
       <p data-reveal className="mt-4 text-[22px] leading-7 text-white">{description}</p>
 
       <div data-reveal className="mt-10 grid grid-cols-[615px_1fr] gap-12 rounded-[32px] bg-white p-8">
         {/* cover */}
-        <div className="h-[417px] overflow-hidden rounded-2xl bg-blue-soft">
+        <div className="group h-[417px] overflow-hidden rounded-2xl bg-blue-soft">
           {cover ? (
-            <img src={cover} alt={`${title} cover`} className="size-full object-cover" />
+            <img
+              src={cover}
+              alt={`${title} cover`}
+              className="size-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+            />
           ) : (
             <div className="flex size-full items-center justify-center text-navy/40">
               cover goes here

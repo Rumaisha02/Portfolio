@@ -39,7 +39,7 @@ export const projects: Project[] = [
       "Healthian lets users book services like blood tests from home, but the app was packed with ads and clutter, so it felt like it was selling to you instead of helping you. I redesigned the home screen as a trust-first experience: less noise, lower cognitive load, and a calmer layout that gives users a sense of relief the moment they open it.",
     cover: healthianCover,
     designTools: [figma, xd, canva],
-    aiTools: [chatgpt, claude, gemini],
+    aiTools: [chatgpt, claude,],
     href: "https://www.behance.net/gallery/251231291/Healthian-App-Redesign",
   },
   {
