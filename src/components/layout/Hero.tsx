@@ -80,11 +80,19 @@ export default function Hero() {
 
         <a
           href="#work"
-          className=" hero-cta mt-2 inline-flex h-10 items-center gap-2 rounded-full bg-pink px-4 text-base font-medium text-navy transition-transform hover:scale-105"
+          className="hero-cta group mt-2 inline-flex h-10 items-center gap-2 rounded-full bg-pink px-4 text-base font-medium text-navy transition-[background-color,box-shadow] duration-300 hover:bg-white hover:shadow-[0_6px_16px_rgba(0,0,0,0.2)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
         >
           View My Work
-          <svg viewBox="0 0 24 24" className="size-5" fill="none" stroke="currentColor"
-            strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <svg
+            viewBox="0 0 24 24"
+            className="size-5 transition-transform duration-300 group-hover:translate-x-1"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+          >
             <path d="M5 12h14M13 6l6 6-6 6" />
           </svg>
         </a>
