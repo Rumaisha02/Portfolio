@@ -72,7 +72,7 @@ export const resume = {
 export const email = "rumaishaqadeer@gmail.com";
 
 export const socials = [
-  { name: "instagram", href: "https://instagram.com/YOUR_HANDLE" }, // put your real handle
+  { name: "instagram", href: "https://www.instagram.com/theclownfaced_rumi/" }, // put your real handle
   { name: "linkedin", href: "https://linkedin.com/in/rumaishaqadeer02" },
   { name: "behance", href: "https://behance.net/rumaishaqadeer" },
 ] as const;
